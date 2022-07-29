@@ -6,7 +6,7 @@ import express from 'express'
 
 import routes from './routes'
 
-import { ErrorHandler } from '~shared/types/errors/ErrorHandler'
+import { ErrorHandler } from '~source/shared/errors/ErrorHandler'
 
 const app = express()
 
