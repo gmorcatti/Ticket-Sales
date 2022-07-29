@@ -15,10 +15,10 @@ const createEvent = (event: CreateEvent): Event => {
   }
 }
 
-export class EventsRepository implements IEventsRepository {
+export class EventsRepositoryInMemory implements IEventsRepository {
   data: Map<EventId, Event> = new Map()
 
-  async getById (id: string): Promise<Event | undefined> {
+  async getById (id: EventId): Promise<Event | undefined> {
     return this.data.get(id)
   }
 
@@ -26,9 +26,11 @@ export class EventsRepository implements IEventsRepository {
     return Array.from(this.data.values())
   }
 
-  async create (eventToCreate: CreateEvent): Promise<void> {
+  async create (eventToCreate: CreateEvent): Promise<EventId> {
     const event = createEvent(eventToCreate)
 
     this.data.set(event.id, event)
+
+    return event.id
   }
 }
