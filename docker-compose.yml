@@ -13,6 +13,9 @@ services:
     depends_on:
       - rabbitmq
       - postgres_db
+    environment:
+      - WAIT_HOSTS=postgres_db:5432
+    command: bash -c "/wait && npm run start:dev:migrate"
 
   postgres_db:
     image: postgres:14
