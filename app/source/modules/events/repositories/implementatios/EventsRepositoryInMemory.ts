@@ -10,8 +10,8 @@ const createEvent = (event: CreateEvent): Event => {
   return {
     ...event,
     id: randomUUID(),
-    created_at: now,
-    updated_at: now,
+    createdAt: now,
+    updatedAt: now,
   }
 }
 

@@ -5,8 +5,8 @@ export type Event = {
   name: string,
   capacity: number,
   date: Date,
-  created_at: Date,
-  updated_at: Date,
+  createdAt: Date,
+  updatedAt: Date,
 }
 
-export type CreateEvent = Omit<Event, 'id' | 'created_at' | 'updated_at'>
+export type CreateEvent = Omit<Event, 'id' | 'createdAt' | 'updatedAt'>
