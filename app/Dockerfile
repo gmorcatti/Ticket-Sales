@@ -10,4 +10,4 @@ RUN yarn install
 
 COPY . .
 
-ENTRYPOINT [ "npm", "run", "start:dev" ]
+CMD [ "npm", "run", "start:dev:migrate" ]
