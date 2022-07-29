@@ -2,8 +2,8 @@ import { inject, injectable } from 'tsyringe'
 
 import { EventsRepository } from '../repositories/implementatios/EventsRepositoryInMemory'
 
+import { AppError } from '~source/shared/errors/AppError'
 import { CreateEvent } from '~source/shared/types'
-import { AppError } from '~source/shared/types/errors/AppError'
 
 @injectable()
 export class CreateEventService {
