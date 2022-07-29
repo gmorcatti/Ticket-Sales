@@ -10,11 +10,11 @@ export class CreateEventController {
   ) {}
 
   handle = async (req: Request, res: Response) => {
-    const { name, lotation, date } = req.body
+    const { name, capacity, date } = req.body
 
     await this.createEvent.execute({
       name,
-      lotation,
+      capacity,
       date,
     })
 
