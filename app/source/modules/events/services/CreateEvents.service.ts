@@ -1,13 +1,13 @@
 import { inject, injectable } from 'tsyringe'
 
-import { EventsRepository } from '../repositories/implementatios/EventsRepositoryInMemory'
+import { IEventsRepository } from '../repositories/IEventsRepository'
 
 import { AppError } from '~source/shared/errors/AppError'
 import { CreateEvent } from '~source/shared/types'
 
 @injectable()
 export class CreateEventService {
-  constructor (@inject('EventsRepository') private eventsRepository: EventsRepository) {}
+  constructor (@inject('EventsRepository') private eventsRepository: IEventsRepository) {}
 
   async execute (event: CreateEvent) {
     if (!event) {
