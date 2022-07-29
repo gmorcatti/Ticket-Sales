@@ -12,14 +12,17 @@ services:
       - application
     depends_on:
       - rabbitmq
+      - postgres_db
 
   postgres_db:
     image: postgres:14
     container_name: postgres_db
+    hostname: postgres_db
     restart: always
     environment:
       - POSTGRES_USER=${PG_USER}
       - POSTGRES_PASSWORD=${PG_PASS}
+      - POSTGRES_DB=ticket-sales
     ports:
       - "5432:5432"
     networks:
