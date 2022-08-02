@@ -1,7 +1,7 @@
+
 import { getNowMinusDays } from '~mocks/helpers/date'
 import { generateId, randomIntNumber } from '~mocks/helpers/numbers'
-
-import { Event } from '~shared/types'
+import { Event, CreateEvent } from '~shared/types'
 
 export const createMockEvent = (overrides?: Partial<Event>): Event => {
   const now = new Date()
@@ -16,3 +16,10 @@ export const createMockEvent = (overrides?: Partial<Event>): Event => {
     ...overrides,
   }
 }
+
+export const createMockInsertEvent = (overrides?: Partial<CreateEvent>): CreateEvent => ({
+  name: `MockName ${randomIntNumber()}`,
+  capacity: randomIntNumber(300),
+  date: getNowMinusDays(3),
+  ...overrides,
+})
