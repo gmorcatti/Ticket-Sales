@@ -1,3 +1,4 @@
+import { orderBy } from 'lodash'
 import { randomUUID } from 'node:crypto'
 
 import { IEventsRepository } from '../IEventsRepository'
@@ -23,7 +24,8 @@ export class EventsRepositoryInMemory implements IEventsRepository {
   }
 
   async getAll (): Promise<Event[]> {
-    return Array.from(this.data.values())
+    const events = Array.from(this.data.values())
+    return orderBy(events, 'createdAt', 'desc')
   }
 
   async create (eventToCreate: CreateEvent): Promise<EventId> {
