@@ -6,7 +6,7 @@
   "scripts": {
     "build": "tsc",
     "start": "ts-node -r tsconfig-paths/register source/server.ts",
-    "start:dev": "ts-node-dev -r tsconfig-paths/register --respawn --poll --transpile-only  source/server.ts",
+    "start:dev": "ts-node-dev --inspect --respawn --poll --transpile-only --exit-child -r tsconfig-paths/register source/server.ts",
     "migrate:up": "prisma migrate dev",
     "start:dev:migrate": "npm run migrate:up && npm run start:dev"
   },
