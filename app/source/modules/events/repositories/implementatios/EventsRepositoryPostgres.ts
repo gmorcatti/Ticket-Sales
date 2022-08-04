@@ -12,8 +12,12 @@ export class EventsRepositoryPostgres implements IEventsRepository {
     this.prisma = new PrismaClient()
   }
 
-  getById (id: EventId): Promise<Event | undefined> {
-    throw new Error('Method not implemented.')
+  async getById (id: EventId): Promise<Event | null> {
+    const event = await this.prisma.event.findUnique({
+      where: { id },
+    })
+
+    return event
   }
 
   getAll (): Promise<Event[]> {
