@@ -15,7 +15,8 @@ export const validateRequest = (paramType: ParamType, schema: Joi.Schema) => asy
     next()
   } catch (error) {
     if (error instanceof Joi.ValidationError) {
-      throw new AppError(error.message.replace(/"/g, "'"))
+      const { message, details } = error
+      throw new AppError(message.replace(/"/g, "'"), 400, details)
     }
 
     throw error
