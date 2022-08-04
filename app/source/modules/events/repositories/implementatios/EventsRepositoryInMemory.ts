@@ -19,8 +19,8 @@ const createEvent = (event: CreateEvent): Event => {
 export class EventsRepositoryInMemory implements IEventsRepository {
   data: Map<EventId, Event> = new Map()
 
-  async getById (id: EventId): Promise<Event | undefined> {
-    return this.data.get(id)
+  async getById (id: EventId): Promise<Event | null> {
+    return this.data.get(id) ?? null
   }
 
   async getAll (): Promise<Event[]> {
