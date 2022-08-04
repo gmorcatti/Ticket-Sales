@@ -7,6 +7,7 @@ export const ErrorHandler = (err: Error, _: Request, res: Response, __: NextFunc
   if (err instanceof AppError) {
     return res.status(err.statusCode).send({
       message: err.message,
+      details: err.details,
     })
   }
 
