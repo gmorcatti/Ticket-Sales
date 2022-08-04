@@ -3,9 +3,15 @@ import Joi from 'joi'
 
 import { AppError } from '../errors/AppError'
 
-export const validateBody = (schema: Joi.Schema) => async (req: Request, _: Response, next: NextFunction) => {
+export enum ParamType {
+  BODY = 'body',
+  PARAMS = 'params',
+  QUERY = 'query',
+}
+
+export const validateRequest = (paramType: ParamType, schema: Joi.Schema) => async (req: Request, _: Response, next: NextFunction) => {
   try {
-    await schema.validateAsync(req.body)
+    await schema.validateAsync(req[paramType])
     next()
   } catch (error) {
     if (error instanceof Joi.ValidationError) {
