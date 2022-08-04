@@ -1,6 +1,6 @@
 import Joi from 'joi'
 
-import { CreateEvent } from '../types'
+import { CreateEvent, EventId } from '../types'
 
 export const eventSchema = Joi.object<CreateEvent>({
   name: Joi.string().required().messages({
@@ -11,5 +11,12 @@ export const eventSchema = Joi.object<CreateEvent>({
   }),
   date: Joi.date().required().messages({
     'any.required': '"date" não informado',
+  }),
+})
+
+export const eventIdSchema = Joi.object<{id: EventId}>({
+  id: Joi.string().guid().required().messages({
+    'string.guid': '"id" precisa ser um UUID válido',
+    'any.required': '"id" não informado',
   }),
 })
