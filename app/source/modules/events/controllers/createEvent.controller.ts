@@ -18,6 +18,6 @@ export class CreateEventController {
       date,
     })
 
-    return res.sendStatus(200)
+    return res.sendStatus(201)
   }
 }
