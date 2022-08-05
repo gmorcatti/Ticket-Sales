@@ -9,6 +9,9 @@ up:
 up-d:
 	docker compose up -d
 
+up-db:
+	docker compose up postgres_db
+
 down:
 	docker compose down
 
