@@ -39,6 +39,13 @@ describe('Unit Tests', () => {
         expect(dbEvent?.capacity).toBe(event.capacity)
         expect(dbEvent?.date).toBe(event.date)
       })
+
+      it('should not get a event from DB if ID is not informed', async () => {
+        // @ts-ignore
+        const dbEvent = await repository.getById(undefined)
+        
+        expect(dbEvent).toBeFalsy()
+      })
     })
 
     describe('getAll', () => {
