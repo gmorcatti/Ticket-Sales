@@ -37,3 +37,13 @@ export type CreateTicket = Omit<Ticket, 'id' | 'createdAt' | 'updatedAt'>
  */
 
 export type PersonName = string
+
+/*
+* RabbitMQ Types
+*/
+export enum ExchangeType {
+  DIRECT = 'direct',
+  FANOUT = 'fanout',
+  HEADERS = 'headers',
+  TOPIC = 'topic',
+}
