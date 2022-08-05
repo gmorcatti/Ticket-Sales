@@ -8,6 +8,7 @@ export type Event = {
   id: EventId,
   name: string,
   capacity: number,
+  ticketValue: number,
   date: Date,
   createdAt: Date,
   updatedAt: Date,
@@ -21,10 +22,18 @@ export type CreateEvent = Omit<Event, 'id' | 'createdAt' | 'updatedAt'>
 
 export type TicketId = string
 
+export enum TicketStatus {
+  RESERVED = 'reserved',
+  CONFIRMED = 'confirmed',
+  CANCELED = 'canceled',
+}
+
 export type Ticket = {
   id: TicketId,
   person: PersonName,
   paidValue: number,
+  status: TicketStatus,
+  details: string,
   event: EventId,
   createdAt: Date,
   updatedAt: Date,
