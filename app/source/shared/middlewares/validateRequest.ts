@@ -1,7 +1,7 @@
 import { NextFunction, Request, Response } from 'express'
 import Joi from 'joi'
 
-import { AppError } from '../errors/AppError'
+import { AppError } from '../config/errors/AppError'
 
 export enum ParamType {
   BODY = 'body',
