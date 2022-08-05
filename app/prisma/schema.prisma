@@ -11,10 +11,22 @@ datasource db {
 }
 
 model Event {
-  id String @id @default(uuid())
-  name String
-  capacity Int
-  date DateTime 
+  id        String   @id @default(uuid())
+  name      String
+  capacity  Int
+  date      DateTime
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+  Ticket    Ticket[]
+}
+
+model Ticket {
+  id        String   @id @default(uuid())
+  person    String
+  paidValue Int
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  event     Event    @relation(fields: [eventId], references: [id])
+  eventId String
 }
