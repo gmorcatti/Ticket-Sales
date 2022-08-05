@@ -1,6 +1,6 @@
 import { connect, Connection } from 'amqplib'
 
-import env from '~source/shared/env'
+import env from '~source/shared/config/env'
 
 export class RabbitMQConnector {
   private static connection: Connection

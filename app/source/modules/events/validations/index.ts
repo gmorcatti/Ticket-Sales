@@ -1,6 +1,6 @@
 import Joi from 'joi'
 
-import { CreateEvent, EventId } from '~source/shared/types'
+import { CreateEvent, EventId } from '~source/shared/config/types'
 
 export const eventSchema = Joi.object<CreateEvent>({
   name: Joi.string().required().messages({

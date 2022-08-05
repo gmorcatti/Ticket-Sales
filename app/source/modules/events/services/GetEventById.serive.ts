@@ -2,8 +2,8 @@ import { inject, injectable } from 'tsyringe'
 
 import { IEventsRepository } from '../repositories/IEventsRepository'
 
-import { AppError } from '~source/shared/errors/AppError'
-import { EventId } from '~source/shared/types'
+import { AppError } from '~source/shared/config/errors/AppError'
+import { EventId } from '~source/shared/config/types'
 
 @injectable()
 export class GetEventByIdService {

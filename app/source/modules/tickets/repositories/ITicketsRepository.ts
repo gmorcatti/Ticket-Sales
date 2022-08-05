@@ -1,4 +1,4 @@
-import { CreateTicket, Ticket, TicketId } from '~shared/types'
+import { CreateTicket, Ticket, TicketId } from '~shared/config/types'
 
 export interface ITicketRepository {
   getById(id: TicketId): Promise<Ticket | null>

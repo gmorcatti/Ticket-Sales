@@ -2,7 +2,7 @@ import { Channel, Connection, ConsumeMessage, Options } from 'amqplib'
 
 import { RabbitMQConnector } from './connection'
 
-import { ExchangeType } from '~source/shared/types'
+import { ExchangeType } from '~source/shared/config/types'
 
 export default class RabbitMQServer {
   private connection: Connection

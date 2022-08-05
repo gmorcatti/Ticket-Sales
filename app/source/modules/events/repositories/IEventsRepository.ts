@@ -1,4 +1,4 @@
-import { CreateEvent, Event, EventId } from '~shared/types'
+import { CreateEvent, Event, EventId } from '~shared/config/types'
 
 export interface IEventsRepository {
   getById(id: EventId): Promise<Event | null>

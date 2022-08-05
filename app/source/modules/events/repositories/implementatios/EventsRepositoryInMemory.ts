@@ -3,7 +3,7 @@ import { randomUUID } from 'node:crypto'
 
 import { IEventsRepository } from '../IEventsRepository'
 
-import { CreateEvent, Event, EventId } from '~source/shared/types'
+import { CreateEvent, Event, EventId } from '~source/shared/config/types'
 
 const createEvent = (event: CreateEvent): Event => {
   const now = new Date()

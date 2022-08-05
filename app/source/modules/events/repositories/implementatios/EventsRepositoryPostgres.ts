@@ -3,7 +3,7 @@ import { PrismaClient } from '@prisma/client'
 
 import { IEventsRepository } from '../IEventsRepository'
 
-import { CreateEvent, Event, EventId } from '~source/shared/types'
+import { CreateEvent, Event, EventId } from '~source/shared/config/types'
 
 export class EventsRepositoryPostgres implements IEventsRepository {
   private prisma: PrismaClient
