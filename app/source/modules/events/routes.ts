@@ -2,12 +2,11 @@ import { Router } from 'express'
 
 import { eventsContainer } from './container'
 
-import { CreateEventController } from './controllers'
+import { CreateEventController, GetEventByIdController } from './controllers'
 
-import { GetEventByIdController } from './controllers/getEventById.controller'
+import { eventIdSchema, eventSchema } from './validations'
 
 import { validateRequest, ParamType } from '~source/shared/middlewares/validateRequest'
-import { eventSchema, eventIdSchema } from '~source/shared/validations/event'
 
 const routes = Router()
 
