@@ -33,7 +33,7 @@ export type Ticket = {
   person: PersonName,
   paidValue: number,
   status: TicketStatus,
-  details: string,
+  details?: string,
   event: EventId,
   createdAt: Date,
   updatedAt: Date,
