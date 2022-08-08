@@ -5,7 +5,7 @@ import { IEventsRepository } from '~source/modules/events/repositories/IEventsRe
 import { EventsRepositoryInMemory } from '~source/modules/events/repositories/implementatios/EventsRepositoryInMemory'
 
 import { CreateEventService } from '~source/modules/events/services/CreateEvents.service'
-import { GetEventByIdService } from '~source/modules/events/services/GetEventById.serive'
+import { GetEventByIdService } from '~source/modules/events/services/GetEventById.service'
 
 const eventsTestContainer = container.createChildContainer()
 

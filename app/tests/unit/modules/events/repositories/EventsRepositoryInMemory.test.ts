@@ -1,6 +1,6 @@
 import { createMockEvent } from "~mocks/events"
 import { EventsRepositoryInMemory } from "~source/modules/events/repositories/implementatios/EventsRepositoryInMemory"
-import { EventId } from "~source/shared/types"
+import { EventId } from "~source/shared/config/types"
 
 describe('Unit Tests', () => {
   describe('EventsRepositoryInMemory', () => {    

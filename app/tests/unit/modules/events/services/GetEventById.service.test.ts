@@ -3,8 +3,8 @@ import { eventsTestContainer } from '../container'
 
 import { createMockInsertEvent } from "~mocks/events"
 import { IEventsRepository } from '~source/modules/events/repositories/IEventsRepository'
-import { GetEventByIdService } from '~source/modules/events/services/GetEventById.serive'
-import { EventId } from '~source/shared/types'
+import { GetEventByIdService } from '~source/modules/events/services/GetEventById.service'
+import { EventId } from '~source/shared/config/types'
 
 describe('Unit Tests', () => {
   describe('GetEventById Service', () => {
