@@ -1,6 +1,6 @@
 import { container } from 'tsyringe'
 
-import { GetEventByIdService } from '../services/GetEventById.serive'
+import { GetEventByIdService } from '../services/GetEventById.service'
 
 import { IEventsRepository } from '~source/modules/events/repositories/IEventsRepository'
 

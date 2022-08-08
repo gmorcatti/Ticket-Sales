@@ -1,7 +1,7 @@
 import { Request, Response } from 'express'
 import { inject, injectable } from 'tsyringe'
 
-import { GetEventByIdService } from '../services/GetEventById.serive'
+import { GetEventByIdService } from '../services/GetEventById.service'
 
 @injectable()
 export class GetEventByIdController {
